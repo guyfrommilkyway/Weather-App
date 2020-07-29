@@ -2,8 +2,6 @@ const request = require('request')
 const forecast = require('./../../utils/forecast')
 const geocode = require('./../../utils/geocode')
 
-// Weather
-
 
 //
 // Goal: Create a reusable function for getting the forecast
@@ -15,17 +13,16 @@ const geocode = require('./../../utils/geocode')
 //    - Coordinate error, pass string for error
 //    - Success, pass forecast string for data (same format as from before)
 
-
-forecast(-75.7088, 44.1545, (error, data) => {
+// Weather
+forecast(44.1545, -75.7088, (error, data) => {
     console.log('Error', error)
     console.log('Data', data)
-  })
+})
 
-
-// Geocoding
-// geocode('Manila', (error, data) => {
-//     console.log('Error', error)
-//     console.log('Data', data)
-// })
+//Geocoding
+geocode('Manila', (error, data) => {
+    console.log('Error', error)
+    console.log('Data', data)
+})
 
 
