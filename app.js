@@ -1,25 +1,25 @@
 const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
 
-const input = process.argv[2]
+const address = process.argv[2]
 
-if (input) {
+if (address) {
     //Geocoding
-    geocode(input, (error, data) => {
+    geocode(address, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return console.log(error)
         }
 
         // Weather
-        forecast(data.latitude, data.longitude, (error, forecastData) => {
+        forecast(latitude, longitude, (error, forecastData) => {
             if (error) {
                 return console.log(error)
             }
 
-            console.log(data.location)
+            console.log(location)
             console.log(forecastData)
         })
     })
 } else {
-    console.log('Please input a valid location.')
+    console.log('Please provide a valid location.')
 }
