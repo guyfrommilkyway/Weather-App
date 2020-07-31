@@ -1,22 +1,17 @@
 {
-  "name": "weather-app",
+  "name": "web-server",
   "version": "1.0.0",
-  "description": "Weather app using Node.js",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tampussy/Weather-App.git"
-  },
   "author": "Almer F. Tampus",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tampussy/Weather-App/issues"
-  },
-  "homepage": "https://github.com/tampussy/Weather-App#readme",
   "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.1.1",
+    "mdbootstrap": "^4.19.1",
     "request": "^2.88.2"
   }
 }
