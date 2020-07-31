@@ -1,0 +1,26 @@
+const request = require('request')
+
+const forecast = (latitude, longitude, callback) => {
+    const url = 'http://api.weatherstack.com/current?access_key=c88dc173852e7148098f251147949329&query=' + encodeURIComponent(latitude) + ',' + encodeURIComponent(longitude)
+
+    request({ url, json: true }, (error, { body }) => {
+        if (error) {
+            callback('Unable to connect to weather services!', undefined)
+        } else if (body.error) {
+            callback('Location not found! Try another search.', undefined)
+        } else {
+            // callback(undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degrees celsius out. Though it feels like ' + body.current.feelslike + ' degrees celsius out.')
+
+            const data = {
+                summary: body.current.weather_descriptions[0],
+                wind_speed: body.current.wind_speed,
+                humidity: body.current.humidity,
+                temperature: body.current.temperature,
+            }
+
+            callback(undefined, data)
+        }
+    })
+}
+
+module.exports = forecast

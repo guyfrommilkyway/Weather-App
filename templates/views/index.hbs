@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+
+    <!-- css files -->
+    {{>css}}
+</head>
+
+<body>
+    {{>header}}
+
+    <div class="container">
+        <div class="row mt-2 mr-3 ml-3">
+
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="">
+                    <span>Use this site to get your weather!</span>
+                    <form class="mt-2" action="">
+                        <div class="form-group">
+                            <input class="form-control-sm" type="text" placeholder="Enter your location">
+                            <button class="btn btn-sm btn-dark">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-8 d-flex justify-content-center">
+
+                <!-- weather summary -->
+                <div class="col-md-8 bg-light pt-3 pr-3 pb-5 pl-3" id="result" style="display: none;">
+                    <div class="d-flex flex-column">
+                        <span id="address" style="font-size: 24px; font-weight: bold;"></span>
+                        <span id="summary" style="font-size: 18px;"></span>
+                    </div>
+                    <div class="d-flex flex-wrap mt-3">
+                        <div class="col-6 text-center">
+                            <span id="temperature" style="font-size: 45px;"></span>
+                            <span style="font-size: 22px;">&deg;C</span>
+                        </div>
+                        <div class="col-6 d-flex flex-column justify-content-center align-items-start">
+                            <div>
+                                Humidity: <span id="humidity"></span>%
+                            </div>
+                            <div>
+                                Wind Speed: <span id="wind_speed"></span> km/h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- error message -->
+                <div class="col-md-8 bg-light pt-3 pr-3 pb-5 pl-3" id="errorMessage" style="display: none;">
+                    <span id="errorMessage"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+
+    <!-- javascript files -->
+    {{>script}}
+</body>
+
+</html>
