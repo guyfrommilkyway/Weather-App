@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+
+    <!-- css files -->
+    {{>css}}
+</head>
+
+<body>
+    {{>header}}
+
+    <div class="container">
+        <div class="row mt-2 mr-3 ml-3">
+            <div class="col-sm-8">
+                <h4>{{title}}</h4>
+                <p class="p-2">
+                    {{message}}
+                </p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    {{>footer}}
+
+    <!-- javascript files -->
+    {{>script}}
+</body>
+
+</html>
